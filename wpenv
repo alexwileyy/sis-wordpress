@@ -66,7 +66,12 @@ case $1 in
         $COMPOSE up -d --build;
         ;;
     down)
-        $COMPOSE down
+        read -n1 -p "Have you made sure that the database being used has been exported?? [y,n] " downit
+        case $downit in
+          y|Y) $COMPOSE down ;;
+          n|N) printf "\nExport database before downing environment." ;;
+          *) echo dont know ;;
+        esac
         ;;
     ssh-db)
          $COMPOSE exec db /bin/bash

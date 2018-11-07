@@ -1,0 +1,59 @@
+.footer{
+  background-color: $colourGrey2;
+  text-align: center;
+  padding: 40px 20px;
+  &__logo{
+    img{
+      width: 200px;
+    }
+  }
+  &__nav{
+    justify-content: center;
+    margin: 20px 0;
+    a{
+      color: white;
+    }
+    div{
+      margin: 0 20px;
+      p{
+        text-transform: uppercase;
+        color: white;
+        font-weight: 400;
+      }
+    }
+  }
+  &__contact{
+    justify-content: center;
+    align-items: center;
+    img{
+      padding-right: 20px;
+      width: 40px;
+    }
+    p{
+      color: white;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+
+  &__rel{
+    margin-top: 20px;
+    a{
+      margin: auto;
+      color: white;
+    }
+    p{
+      margin: 0;
+      color: white;
+    }
+    img{
+      width: 20px;
+      margin: 0 10px;
+    }
+    span, img{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+}

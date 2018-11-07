@@ -34,8 +34,8 @@ get_header(); ?>
                                     <div class="header__content">
                                         <h1 class="heading--large"><?php echo $slide['title'];?></h1>
                                         <p class="body--large"><?php echo $slide['body'];?></p>
-                                        <a href="{{slide.link}}">
-                                            <app-button text="Services"></app-button>
+                                        <a href="<?php echo $button['link'];?>">
+                                            <button class="button"><p>Services</p></button>
                                         </a>
                                     </div>
                                 </div>
@@ -105,21 +105,12 @@ get_header(); ?>
         <?php
         // WP_Query arguments
         $args = array(
-            'post_type'              => array( 'service_post_type' ),
+            'post_type'              => array( 'service_type' ),
         );
 
         // The Query
         $services = new WP_Query( $args );
-
-        // The Loop
-        if ( $services->have_posts() ) {
-            while ( $services->have_posts() ) {
-                $services->the_post();
-                // do something
-            }
-        }
-        // Restore original Post Data
-        wp_reset_postdata();
+        $services->posts = array_reverse($services->posts);
         ?>
         <!-- Services -->
         <section class="section service-section--small landing__services" id="services">
@@ -148,9 +139,7 @@ get_header(); ?>
                             <?php
                             $service = get_field('general');
                             $feature_image = $service['feature_image'];
-                            $title = $service['title'];
                             $desc = $service['short_description'];
-                            $link = $service['link'];
                             ?>
                             <div class="services__box col-md-4 col-sm-6 col-10 offset-1 offset-sm-0">
 
@@ -164,9 +153,9 @@ get_header(); ?>
 
                                         <!-- Service body -->
                                         <div class="services__box-body">
-                                            <h4><?php echo $title;?></h4>
-                                            <p><?php echo $body;?></p>
-                                            <a href="<?php echo $link;?>">View Product</a>
+                                            <h4><?php echo get_the_title();?></h4>
+                                            <p><?php echo $desc;?></p>
+                                            <a href="<?php echo get_post_permalink();?>">View Product</a>
                                         </div>
                                     </div>
                                 </a>

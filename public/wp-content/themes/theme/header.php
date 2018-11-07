@@ -23,4 +23,47 @@
 
     <body <?php body_class(); ?>>
 
+        <header class="nav-header">
+
+            <div class="container-fluid">
+                <div class="row justify-content-between align-items-center">
+                    <div class="nav-header__logo">
+                        <a routerLink="/"><img src="<?php echo get_template_directory_uri();?>/images/sis-logo.png"/>
+                            <h3 class="web-title">Security And Intelligence Services</h3>
+                        </a>
+                    </div>
+                    <div class="nav-header__right">
+                        <div class="mobile-menu" (click)="toggleMenu()">
+                            <div class="mobile-menu__node"></div>
+                            <div class="mobile-menu__node"></div>
+                            <div class="mobile-menu__node"></div>
+                        </div>
+                        <div class="navigation">
+                            <ul>
+                                <li><a routerLink="/">Home</a></li>
+                                <li><a routerLink="/about">About</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a routerLink="/contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+<!--        <div class="menu" [style.visibility]="showMenu ? 'visible' : 'hidden'">-->
+<!---->
+<!--            <div class="menu-left" [@menuLeft]="menuState">-->
+<!--                <div class="menu-left-content">-->
+<!--                    <ul>-->
+<!--                        <li *ngFor="let item of menuItems">-->
+<!--                            <a [routerLink]="item.link" [fragment]="item.frag" (click)="toggleMenu()">{{item.text}}</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
+
         <main class="main">
