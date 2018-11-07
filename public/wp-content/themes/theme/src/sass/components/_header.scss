@@ -1,0 +1,50 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: 51px;
+  //background-color: #272727;
+  //@include background-image('/assets/shape-background.jpg', cover, center, no-repeat);
+  &--full{
+    @extend .header;
+    background-color: #272727;
+    @include background-image('/assets/shape-background.jpg', cover, center, no-repeat);
+    height: 100vh;
+  }
+  &--small{
+    @extend .header;
+    background-color: #272727;
+    @include background-image('/assets/shape-background.jpg', cover, center, no-repeat);
+    //height: 596px;
+    padding: 151px 0 100px 0;
+  }
+  h2{
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+  }
+  &__content{
+    width: 80%;
+    box-sizing: border-box;
+    @include max-breakpoint($xsUpper){
+      width: 100%;
+    }
+    .heading--large{
+      color: white;
+      margin-bottom: 10px;
+    }
+    .body--large{
+      color: white;
+      margin-bottom: 40px;
+    }
+  }
+  .heading--large{
+    color: white;
+    margin-bottom: 10px;
+  }
+  .body--large{
+    color: white;
+    margin-bottom: 40px;
+  }
+}

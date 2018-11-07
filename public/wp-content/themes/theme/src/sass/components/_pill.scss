@@ -1,0 +1,14 @@
+.pill{
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,.05);
+  background-color: $brandBluePrimary;
+  p{
+    margin: 0;
+    padding: 20px;
+    font-weight: 400;
+    color: white;
+  }
+  &--full{
+    width: 100%;
+  }
+}

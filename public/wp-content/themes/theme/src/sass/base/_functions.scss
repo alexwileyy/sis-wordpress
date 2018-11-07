@@ -1,0 +1,7 @@
+/**
+  RETURNS THE COLOUR FROM A COLOUR ARRAY
+  Implement if needed
+ */
+@function get-colour($set, $colour){
+  @return map-get(map-get($colours, $set), $colour);
+}

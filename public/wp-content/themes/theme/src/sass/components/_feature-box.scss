@@ -1,0 +1,33 @@
+.feature-box{
+  background-color: $featureBoxColour;
+  padding: 28px;
+  h4{
+    margin: 0;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+  }
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li{
+      padding-bottom: 30px;
+      &:nth-last-child(1){
+        padding-bottom: 0;
+      }
+      img, p{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      p{
+        padding-left: 20px;
+        margin: 0;
+      }
+      img{
+        $dim: 25px;
+        width: $dim;
+        height: $dim;
+      }
+    }
+  }
+}

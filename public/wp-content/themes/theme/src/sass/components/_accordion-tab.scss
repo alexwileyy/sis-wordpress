@@ -1,0 +1,16 @@
+.accordion-tab{
+  padding: 5px 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.02);
+  background-color: white;
+  margin-bottom: 25px;
+  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  cursor: pointer;
+  p{
+    font-weight: 300;
+    font-size: 20px;
+  }
+  &.active, &:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  }
+}
