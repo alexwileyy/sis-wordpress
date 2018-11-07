@@ -1,0 +1,49 @@
+@import "../mixins-custom";
+@import "../base/vars";
+@import "../base/mixins";
+.cta-component{
+  background-color: #313131;
+  @include background-image('/assets/shape-background.jpg', cover, center, no-repeat);
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 40px 30px;
+  }
+  a:hover &__link img{
+    left: 10px;
+  }
+  &__text, &__link{
+    color: white;
+  }
+  &__text{
+    h3{
+      font-size: 1.875rem;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    @include max-breakpoint($xsUpper){
+      padding-bottom: 20px;
+    }
+  }
+  &__link{
+    img, h4{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    img{
+      margin-left: 15px;
+      height: 30px;
+      width: 30px;
+      position: relative;
+      left: 0;
+      transition: left .3s ease;
+    }
+    h4{
+      font-size: 1.3125rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+}

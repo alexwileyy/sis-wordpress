@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'Houschka Rounded Alt';
+    src: url('./HouschkaRoundedAlt-Medium.eot');
+    src: url('./HouschkaRoundedAlt-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./HouschkaRoundedAlt-Medium.woff2') format('woff2'),
+        url('./HouschkaRoundedAlt-Medium.woff') format('woff'),
+        url('./HouschkaRoundedAlt-Medium.ttf') format('truetype'),
+        url('./HouschkaRoundedAlt-Medium.svg#HouschkaRoundedAlt-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Heroic Condensed';
+    src: url('./HeroicCondensed-Medium.eot');
+    src: url('./HeroicCondensed-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./HeroicCondensed-Medium.woff2') format('woff2'),
+        url('./HeroicCondensed-Medium.woff') format('woff'),
+        url('./HeroicCondensed-Medium.ttf') format('truetype'),
+        url('./HeroicCondensed-Medium.svg#HeroicCondensed-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Houschka Rounded';
+    src: url('./HouschkaRounded-Bold.eot');
+    src: url('./HouschkaRounded-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./HouschkaRounded-Bold.woff2') format('woff2'),
+        url('./HouschkaRounded-Bold.woff') format('woff'),
+        url('./HouschkaRounded-Bold.ttf') format('truetype'),
+        url('./HouschkaRounded-Bold.svg#HouschkaRounded-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Houschka Rounded Alt';
+    src: url('./HouschkaRoundedAlt-Light.eot');
+    src: url('./HouschkaRoundedAlt-Light.eot?#iefix') format('embedded-opentype'),
+        url('./HouschkaRoundedAlt-Light.woff2') format('woff2'),
+        url('./HouschkaRoundedAlt-Light.woff') format('woff'),
+        url('./HouschkaRoundedAlt-Light.ttf') format('truetype'),
+        url('./HouschkaRoundedAlt-Light.svg#HouschkaRoundedAlt-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Heroic Condensed';
+    src: url('./HeroicCondensed-Bold.eot');
+    src: url('./HeroicCondensed-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./HeroicCondensed-Bold.woff2') format('woff2'),
+        url('./HeroicCondensed-Bold.woff') format('woff'),
+        url('./HeroicCondensed-Bold.ttf') format('truetype'),
+        url('./HeroicCondensed-Bold.svg#HeroicCondensed-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Houschka Rounded Alt';
+    src: url('./HouschkaRoundedAlt-Bold.eot');
+    src: url('./HouschkaRoundedAlt-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./HouschkaRoundedAlt-Bold.woff2') format('woff2'),
+        url('./HouschkaRoundedAlt-Bold.woff') format('woff'),
+        url('./HouschkaRoundedAlt-Bold.ttf') format('truetype'),
+        url('./HouschkaRoundedAlt-Bold.svg#HouschkaRoundedAlt-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Houschka Rounded Alt';
+    src: url('./HouschkaRoundedAlt-DemiBold.eot');
+    src: url('./HouschkaRoundedAlt-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./HouschkaRoundedAlt-DemiBold.woff2') format('woff2'),
+        url('./HouschkaRoundedAlt-DemiBold.woff') format('woff'),
+        url('./HouschkaRoundedAlt-DemiBold.ttf') format('truetype'),
+        url('./HouschkaRoundedAlt-DemiBold.svg#HouschkaRoundedAlt-DemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+

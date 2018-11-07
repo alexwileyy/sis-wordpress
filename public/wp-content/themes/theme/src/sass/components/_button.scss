@@ -1,0 +1,22 @@
+@import "../base/vars";
+@import "../mixins-custom";
+.button{
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  background-color: $brandBlueDark;
+  padding: 0 30px;
+  border-radius: 3px;
+  @include border-shadow(0px, 0px, 15px, rgba(0,0,0,0.03));
+  transition: border-shadow 0.3s ease;
+  p{
+    color: white;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  &:hover{
+    @include border-shadow(0px, 0px, 15px, rgba(248,184,31,0.10));
+
+  }
+}

@@ -1,0 +1,10 @@
+/*
+Theme Name: Theme
+Author: Alex Wiley
+Author URI: https://alexwiley.co.uk;
+Version: 1.0
+Text Domain: Theme
+*/
+@import 'main.min.css';
+
+@import "./fonts/stylesheet.css";

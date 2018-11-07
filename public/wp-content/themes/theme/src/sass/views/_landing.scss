@@ -1,0 +1,173 @@
+@import "../mixins-custom";
+@import "../base/vars";
+@import "../base/mixins";
+.landing{
+
+  &__intro{
+    padding: 130px 0;
+    @include max-breakpoint($smUpper){
+      padding: 70px 0 20px 0;
+    }
+    img{
+      //height: 500px;
+      position: relative;
+      left:50%;
+      transform: translateX(-50%);
+      @include max-breakpoint($smUpper){
+        margin-bottom: 40px;
+      }
+    }
+    &-button{
+      display: block;
+      margin-top: 40px;
+    }
+  }
+
+  &__about{
+    align-items: center;
+    padding-bottom: 80px;
+    &-content{
+      margin-top: -300px;
+      @include max-breakpoint($smUpper){
+        margin-top: -50px;
+      }
+    }
+    &-image{
+      height: 361px;
+      width: 287px;
+      margin: auto;
+      background-color: #dcdcdc;
+      position: relative;
+      z-index: 10;
+      box-shadow: -15px 15px 0 rgba(0,0,0,.05);
+      @include background-image('/assets/shipping.jpg', cover, center, no-repeat);
+    }
+    &-icons{
+      margin-bottom: 30px;
+    }
+    &-icon{
+      align-items: center;
+      padding: 10px 0;
+      div{
+        width: 25px;
+        height: 25px;
+      }
+      p{
+        padding-left: 15px;
+        font-weight: 300;
+      }
+    }
+    .heading--small{
+      margin-top: 0;
+    }
+  }
+
+  &__services{
+    &-heading{
+      padding-right: 35%;
+      @include max-breakpoint($xsUpper){
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__testimonial{
+    @include background-image('/assets/shape-background.jpg', cover, center, no-repeat);
+    background-color: #272727;
+    align-items: center;
+    @include max-breakpoint(992){
+      flex-direction: column-reverse;
+    }
+    &-text{
+      @include max-breakpoint(992){
+        margin-top: 40px;
+      }
+      h2, p{
+        color: white;
+      }
+      p{
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+}
+
+.services{
+  justify-content: space-around;
+  &__box{
+    //width: 30%;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 15px 0;
+    cursor: pointer;
+    &-wrapper{
+      border: 1px solid #f3f3f3;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      &:hover{
+        transform: scale(1.02);
+      }
+    }
+    &-heading{
+      align-items: center;
+      flex-wrap: nowrap;
+      img{
+        width: 45px;
+        margin-right: 15px;
+      }
+      &-background{
+        height: 150px;
+        background-color: #222222;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+    &-body{
+      padding: 10px;
+      h4{
+        font-size: 1.375rem;
+        font-weight: 400;
+        margin: 0;
+      }
+      h4, p{
+        color: $textBodyColour;
+      }
+    }
+    a{
+      font-weight: 300;
+    }
+  }
+}
+
+.client{
+  position: relative;
+  &__image{
+    width: 94px;
+    height: 94px;
+    position: absolute;
+    $offset: -30px;
+    top: $offset;
+    left: $offset;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 26px rgba(0,0,0,0.06);
+  }
+  &__text{
+    background-color: white;
+    $boxPaddingX: 17px;
+    $boxPaddingY: 25px;
+    padding: $boxPaddingY $boxPaddingX $boxPaddingY 80px;
+    h2{
+      font-size: 1.56rem;
+      margin: 0;
+      padding-bottom: 12px;
+      text-transform: uppercase;
+    }
+    p{
+      margin: 0;
+    }
+  }
+}

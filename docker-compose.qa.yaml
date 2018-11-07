@@ -1,0 +1,28 @@
+version: '3.0'
+
+services:
+
+   db:
+     build: ./database
+     restart: always
+     ports: 
+       - "3306:3306"
+
+   wordpress:
+     depends_on:
+       - db
+     build: 
+       context: .
+       dockerfile: ./public/Dockerfile
+     ports:
+       - "80:80"
+     environment:
+       VIRTUAL_HOST: "localhost"
+       DB_HOST: "db:3306"
+       DB_NAME: "wordpress"
+       DB_USER: "wordpress"
+       DB_PASSWORD: "wordpress"
+       APPLICATION_ENV: "qa"
+       WP_HOME: "http://localhost"
+       WP_SITEURL: "http://localhost"
+       WP_DEBUG: "false"
