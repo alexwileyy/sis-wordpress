@@ -143,7 +143,7 @@ get_header(); ?>
                             ?>
                             <div class="services__box col-md-4 col-sm-6 col-10 offset-1 offset-sm-0">
 
-                                <a href="<?php echo $link;?>">
+                                <a href="<?php echo get_post_permalink();?>">
                                     <div class="services__box-wrapper">
                                         <!-- Service header -->
                                         <div class="services__box-heading">

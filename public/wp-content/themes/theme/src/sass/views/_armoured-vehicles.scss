@@ -1,0 +1,24 @@
+@import "../base/vars";
+.armoured-vehicles{
+
+  .vehicle-stock{
+    padding: 50px 0;
+    background-color: $sectionBgColour;
+
+    &__category{
+
+    }
+
+    &__thumbnail{
+      background-color: $infoBoxColour;
+      margin-bottom: 40px;
+      box-shadow: 5px 0 15px rgba(0,0,0,0.03);
+      p{
+        padding: 10px;
+        margin: 0;
+      }
+    }
+
+  }
+
+}

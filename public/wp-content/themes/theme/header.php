@@ -39,12 +39,20 @@
                             <div class="mobile-menu__node"></div>
                         </div>
                         <div class="navigation">
-                            <ul>
-                                <li><a routerLink="/">Home</a></li>
-                                <li><a routerLink="/about">About</a></li>
-                                <li><a href="#services">Services</a></li>
-                                <li><a routerLink="/contact">Contact</a></li>
-                            </ul>
+                            <?php
+                                $args = array(
+                                        'menu' => 'nav-top',
+                                        'menu_class' => '',
+                                        'container_class' => 'wp-menu'
+                                );
+                                wp_nav_menu($args);
+                            ?>
+<!--                            <ul>-->
+<!--                                <li><a routerLink="/">Home</a></li>-->
+<!--                                <li><a routerLink="/about">About</a></li>-->
+<!--                                <li><a href="#services">Services</a></li>-->
+<!--                                <li><a routerLink="/contact">Contact</a></li>-->
+<!--                            </ul>-->
                         </div>
                     </div>
                 </div>

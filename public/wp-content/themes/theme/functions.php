@@ -47,16 +47,15 @@ function hook_sig()
 }
 add_action('wp_head', 'hook_sig', 0);
 
-// function register_my_menus()
-// {
-//     register_nav_menus(
-//         array(
-//             'menu-left' => __('Main Left'),
-//             'menu-right' => __('Main Right')
-//         )
-//     );
-// }
-// add_action('init', 'register_my_menus');
+ function register_my_menus()
+ {
+     register_nav_menus(
+         array(
+             'nav-top' => __('Top Navigation')
+         )
+     );
+ }
+ add_action('init', 'register_my_menus');
 
 /**
  * Enqueue scripts and styles.

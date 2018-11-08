@@ -148,8 +148,8 @@ get_header(); ?>
 
     <!-- CTA -->
     <?php
-    $cta = get_field('cta');
-    $cta_text = $cta['bar_text'];
+    $cta = get_field('call_to_action');
+    $cta_text = $cta['cta_title'];
     ?>
     <?php if($cta['show_cta']) : ?>
         <?php include( locate_template( 'partials/app-cta.php', false, false ) );  ?>
