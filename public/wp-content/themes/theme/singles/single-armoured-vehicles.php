@@ -22,7 +22,7 @@ $section_one = get_field('section_one');
 $section_two = get_field('section_two');
 $section_three = get_field('section_three');
 $section_four = get_field('section_four');
-$section_five = get_field('section_five');
+$vehicle_stock = get_field('vehicle_stock');
 ?>
 
 <div class="armoured-vehicles">
@@ -129,57 +129,29 @@ $section_five = get_field('section_five');
             <div class="row">
 
                 <div class="col-md-12">
-                    <h2>VEHICLE STOCK</h2>
-                    <p>SIS provide a variety of armoured vehicles to suit your needs.</p>
+                    <h2><?php echo $vehicle_stock['title'];?></h2>
+                    <p><?php echo $vehicle_stock['body'];?></p>
                 </div>
 
+                <?php foreach ($vehicle_stock['stock'] as $type) : ;?>
                 <div class="col-md-12">
                     <div class="vehicle-stock__category">
-                        <h4>4 x 4 Armoured Conversions</h4>
+                        <h4><?php echo $type['stock_title'];?></h4>
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-md-3" *ngFor="let c of conversions">
+                                <?php foreach ($type['stock_items'] as $stock) : ?>
+                                <div class="col-md-3">
                                     <div class="vehicle-stock__thumbnail" >
-                                        <img src="{{c.image}}"/>
-                                        <p>{{c.name}}</p>
+                                        <img src="<?php echo $stock['vehicle_image'];?>"/>
+                                        <p><?php echo $stock['vehicle_name'];?></p>
                                     </div>
                                 </div>
+                                <?php endforeach;?>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-12">
-                    <div class="vehicle-stock__category">
-                        <h4>4 x 4 Armoured Conversions</h4>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-3" *ngFor="let c of conversions">
-                                    <div class="vehicle-stock__thumbnail" >
-                                        <img src="{{c.image}}"/>
-                                        <p>{{c.name}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="vehicle-stock__category">
-                        <h4>4 x 4 Armoured Conversions</h4>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-3" *ngFor="let c of conversions">
-                                    <div class="vehicle-stock__thumbnail" >
-                                        <img src="{{c.image}}"/>
-                                        <p>{{c.name}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
             </div>
 
@@ -187,7 +159,14 @@ $section_five = get_field('section_five');
 
     </div>
 
-    <app-cta></app-cta>
+    <!-- CTA -->
+    <?php
+    $cta_text = get_field('cta_title');
+    $cta_link = get_field('cta_link');
+    ?>
+    <?php if(get_field('show_cta')) : ?>
+        <?php include( locate_template( 'partials/app-cta.php', false, false ) );  ?>
+    <?php endif; ?>
 
 </div>
 
