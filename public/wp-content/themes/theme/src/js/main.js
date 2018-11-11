@@ -39,4 +39,50 @@ jQuery(document).ready(function(){
         autoplaySpeed: 10000
     });
 
+    $('.remove-script').remove();
+
+    //Router
+    let url = window.location.href;
+    url = url.replace(/(\?).*/, "");
+    const splitUrl = url.split('/');
+    if (splitUrl[splitUrl.length - 1].length === 0) {
+        splitUrl.splice(-1, 1);
+    }
+    const route = splitUrl[splitUrl.length - 1];
+
+    switch (route){
+        case "contact":
+            contact();
+    }
+
 });
+
+
+function trainingSelectCourse(index) {
+    $('.training-courses--box-title').text(trainingCourses[index]['name']);
+    if (trainingCourses[index]['description'].length > 0) {
+        $('.training-courses--box-desc').text(trainingCourses[index]['description']);
+    } else {
+        $('.training-courses--box-desc').html("Please <a href='/contact'>contact us</a> for more information");
+    }
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+//Routes
+function contact() {
+    console.warn('Contact');
+    const status = getParameterByName('status', window.location.href);
+    if (status === 'done') {
+        $('.contact--form-submitted').addClass('show');
+        $('.contact__form').remove();
+    }
+}

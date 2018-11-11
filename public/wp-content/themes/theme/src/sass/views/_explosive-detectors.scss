@@ -1,0 +1,59 @@
+@import "../base/vars";
+@import "../mixins-custom";
+@import "../base/mixins";
+.explosive-detectors{
+
+  .drones-can-kill{
+    margin-bottom: 20px;
+  }
+
+  .article{
+    margin: 40px auto;
+    @include max-breakpoint($smUpper){
+      margin: 20px auto;
+    }
+    &:nth-child(2){
+      margin-bottom: 0;
+    }
+  }
+
+  &__product{
+    text-align: center;
+    margin-bottom: 20px;
+    img{
+      max-width: 100%;
+      width: 60px;
+    }
+    @include max-breakpoint($smUpper){
+      margin-bottom: 60px;
+    }
+  }
+
+  &__grid{
+    margin: 50px 0;
+    @include max-breakpoint($smUpper){
+      margin-bottom: -30px;
+    }
+  }
+
+  &__buy{
+    @include max-breakpoint($smUpper){
+      text-align: center;
+    }
+  }
+
+  &__enquire{
+    margin-top: 30px;
+  }
+
+  &__screening-products{
+    &-title{
+      margin-top: 50px;
+      h3{
+        font-size: 1.5625rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+}
