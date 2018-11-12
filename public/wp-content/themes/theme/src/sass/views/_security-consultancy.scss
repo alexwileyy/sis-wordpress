@@ -1,0 +1,26 @@
+@import "../base/mixins";
+@import "../base/vars";
+.wsc{
+  &__consultancy{
+    margin: 100px 0 50px 0;
+    & > div{
+      text-align: center;
+    }
+    img{
+      width: 70px;
+    }
+    .pill{
+      margin-bottom: 20px;
+      &:nth-last-of-type{
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__sc{
+    &-content{
+      @include max-breakpoint($xsUpper){
+        padding: 0 15px;
+      }
+    }
+  }
+}
