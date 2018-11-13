@@ -25,7 +25,7 @@ $section_two = get_field('section_two');
 
     <header class="header--small" style="background-image: url('<?php echo get_template_directory_uri();?>/images/shape-background.jpg')">
         <!-- Header content -->
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <h2 class="col-10"><?php echo $header['title'];?></h2>
             </div>
@@ -33,7 +33,7 @@ $section_two = get_field('section_two');
     </header>
 
     <section class="service-feature">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <!-- Feature Text -->
                 <div class="col-md-7 col-sm-12 order-md-0 order-sm-1">
@@ -55,13 +55,13 @@ $section_two = get_field('section_two');
     </section>
 
     <section class="service-section--small about-team">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <h2 class="uppercase"><?php echo $section_two['title'];?></h2>
             </div>
             <div class="row about-team__list">
 
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row about-team-member">
                         <?php foreach ($section_two['team_members'] as $person) : ?>
                         <div class="col-md-4 col-sm-6 offset-sm-0 col-10 offset-1">
