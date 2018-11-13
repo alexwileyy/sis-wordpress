@@ -19,7 +19,7 @@
             <div class="row footer__rel">
                 <a href="https://alexwiley.co.uk">
                     <p>Designed & Developed By</p>
-                    <img src="/assets/aw-logo.png"/>
+                    <img src="<?php echo get_template_directory_uri();?>/images/aw-logo.png"/>
                     <span>Alex Wiley</span>
                 </a>
             </div>

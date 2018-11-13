@@ -1,0 +1,35 @@
+.n-and-b{
+
+  .header--small{
+    padding-bottom: 300px;
+  }
+
+  &__featured{
+    margin-top: -180px;
+    margin-bottom: 100px;
+    h2{
+      color: white;
+    }
+
+    .feature-post{
+      transition: all 0.3s ease;
+      &:hover{
+        transform: translateY(-10px);
+      }
+    }
+
+  }
+
+  &--title{
+    @include rem("font-size", 32);
+    text-transform: uppercase;
+  }
+
+  .posts{
+    margin-bottom: 100px;
+    .post-preview{
+      margin-bottom: 20px;
+    }
+  }
+
+}

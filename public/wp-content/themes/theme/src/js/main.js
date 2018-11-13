@@ -40,6 +40,7 @@ jQuery(document).ready(function(){
     });
 
     $('.remove-script').remove();
+    objectFitImages();
 
     //Router
     let url = window.location.href;

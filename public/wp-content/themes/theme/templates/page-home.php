@@ -29,7 +29,7 @@ get_header(); ?>
                     <?php foreach ($header_slides as $slide) : ?>
                         <div class="header-slider-item" style="background-image: url(<?php echo $slide['background']; ?>)">
                             <div class="header-slider--overlay"></div>
-                            <div class="container-fluid">
+                            <div class="container">
                                 <div class="col-md-8 col-12">
                                     <div class="header__content">
                                         <h1 class="heading--large"><?php echo $slide['title'];?></h1>
@@ -48,7 +48,19 @@ get_header(); ?>
             </div>
         </header>
 
-        <section class="container-fluid section landing__intro service-section">
+        <?php $video = get_field('video');?>
+        <?php if($video['show_video']) : ?>
+        <section class="landing__video">
+            <div class="landing__video--container">
+                <video width="320" height="240" poster="<?php echo $video['poster'];?>" controls>
+                    <source src="<?php echo $video['video'];?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+        <?php endif;?>
+
+        <section class="container section landing__intro service-section">
             <?php
             $section_one = get_field('section_one');
             $button = $section_one['button'];
@@ -75,7 +87,7 @@ get_header(); ?>
 
 
         <!-- Security is a global need -->
-        <section class="section landing__about container-fluid">
+        <section class="section landing__about container">
 
             <div class="row">
                 <div class="col-md-8">
@@ -115,7 +127,7 @@ get_header(); ?>
         <!-- Services -->
         <section class="section service-section--small landing__services" id="services">
 
-            <div class="container-fluid">
+            <div class="container">
 
                 <div class="row">
 
