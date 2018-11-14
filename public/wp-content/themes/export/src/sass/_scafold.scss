@@ -1,0 +1,57 @@
+//.section{
+//  padding: 100px 87px;
+//}
+
+section h2{
+  margin-top: 0;
+}
+
+.service-section{
+  &--small{
+    padding: 100px 0;
+    @include max-breakpoint($smUpper){
+      padding: 50px 0;
+    }
+  }
+}
+
+.container-fluid{
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+  @include max-breakpoint($xsUpper){
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+.divider{
+  &--graphic{
+    height: 300px;
+    @include background-image('/assets/graphic-divider.svg', 120%, bottom, no-repeat);
+    margin-bottom: 50px;
+    @include max-breakpoint($xsUpper){
+      height: 100px;
+    }
+  }
+}
+
+.text-align{
+  &--right{
+    text-align: right;
+  }
+  &--center{
+    text-align: center;
+  }
+  &--left{
+    text-align: left;
+  }
+}
+
+img{
+  max-width: 100%;
+}
+
+.no-gutter > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}

@@ -1,0 +1,58 @@
+@import "../base/vars";
+.about{
+
+  &-team{
+
+    &__list{
+      & > .container-fluid{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+
+    h2.uppercase{
+      margin-bottom: 70px;
+    }
+
+    &-member{
+      & > div{
+        margin-bottom: 70px;
+      }
+    }
+
+    &--picture{
+      height: 370px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top;
+      box-shadow: 0 3px 15px rgba(black, .05);
+    }
+
+    &--name, &--position{
+      margin: 0;
+    }
+
+    &--name{
+      padding-top: 30px;
+    }
+
+    &--position{
+      color: $brandBlueDark;
+    }
+
+    &--cv{
+      a{
+        display: flex;
+        align-items: center;
+      }
+      p{
+        margin: 0;
+        padding-left: 15px;
+      }
+      img{
+        height: 35px;
+      }
+    }
+  }
+
+}

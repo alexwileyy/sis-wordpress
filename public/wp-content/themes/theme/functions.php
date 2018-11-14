@@ -87,16 +87,20 @@ function remove_menus()
     // remove_menu_page( 'index.php' );                  //Dashboard
     //remove_menu_page('edit.php');                   //Posts
     //remove_menu_page( 'upload.php' );                 //Media
-    // add_menu_page( 'Home Page', 'Home Page', 'manage_options', 'post.php?post=20&action=edit', '', 'dashicons-admin-home', 5 );    //Pages
     // remove_menu_page( 'edit.php?post_type=page' );    //Pages
-    // remove_menu_page('edit-comments.php');          //Comments
-    // remove_menu_page( 'themes.php' );                 //Appearance
-    // remove_menu_page( 'plugins.php' );                //Plugins
+    remove_menu_page('edit-comments.php');          //Comments
+    remove_menu_page( 'themes.php' );                 //Appearance
+    remove_menu_page( 'plugins.php' );                //Plugins
     // remove_menu_page( 'users.php' );                  //Users
-    // remove_menu_page( 'tools.php' );                  //Tools
+    remove_menu_page( 'tools.php' );                  //Tools
     // remove_menu_page( 'options-general.php' );        //Settings
 }
 add_action('admin_menu', 'remove_menus');
+
+function remove_acf_menu() {
+    remove_menu_page('edit.php?post_type=acf-field-group');
+}
+add_action( 'admin_menu', 'remove_acf_menu', 999);
 
 
 function init_remove_editor(){
@@ -159,6 +163,7 @@ function service_post_type() {
         'show_ui'               => true,
         'show_in_menu'          => true,
         'menu_position'         => 20,
+        'menu_icon'             => 'dashicons-screenoptions',
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'can_export'            => true,

@@ -1,0 +1,115 @@
+//Setup fonts
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+$headingFont: 'Source Sans Pro', sans-serif;;
+$bodyFont: 'Source Sans Pro', sans-serif;
+$alternativeFont: 'Lato', sans-serif;
+
+
+//Setup font sizes
+
+html, body{
+  font-size: 16px;
+  color: $bodyColour;
+  font-family: $bodyFont;
+  @include max-breakpoint($xsUpper){
+    font-size: 15px;
+  }
+}
+
+h1{
+  font-size: 4.68rem;
+}
+
+h2{
+  font-size: 3.125rem;
+  margin-bottom: 30px;
+  @include max-breakpoint($xsUpper){
+    font-size: 3rem;
+  }
+  &.bold{
+    font-weight: bold;
+  }
+}
+
+h3{
+  font-size: 2rem;
+}
+
+h4{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+h5{
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h6{
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+p{
+  font-size: 1rem;
+  line-height: 26px;
+}
+
+a{
+  text-decoration: none;
+  color: $brandBluePrimary;
+  &:visited{
+    color: $brandBlueDark;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  &::selection{
+    color: white;
+    background-color: $brandBlueDark;
+  }
+}
+
+/* Text Styles */
+.heading{
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 4rem;
+  color: $textHeadingColour;
+  &--large{
+    @extend .heading;
+    font-size: 4.68rem;
+    @include max-breakpoint($xsUpper){
+      @include rem("font-size", 45);
+      line-height: 45px;
+    }
+  }
+  &--small{
+    @extend .heading;
+    font-size: 2.68rem;
+    line-height: 2.43rem;
+  }
+}
+
+.body{
+  font-weight: 300;
+  color: $textBodyColour;
+  &--large{
+    @extend .body;
+    font-size: 1.375rem;
+    @include max-breakpoint($xsUpper){
+      @include rem("font-size", 18);
+    }
+  }
+  &--small{
+    @extend .body;
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
+
+.uppercase{
+  text-transform: uppercase;
+}

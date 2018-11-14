@@ -1,0 +1,66 @@
+@import "../base/mixins";
+@import "../base/vars";
+.overt-and-covert{
+
+  .feature{
+    display: flex;
+    margin-top: 80px;
+    @include max-breakpoint($smUpper){
+      margin-top: 20px;
+    }
+    &__icon{
+      margin-right: 20px;
+      img{
+        width: 90px;
+      }
+    }
+    &__content{
+      padding: 15px;
+      background-color: #f7f7f7;
+      *{
+        margin: 0;
+      }
+      h3{
+        font-size: 1.5625rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .vehicle-integration{
+    padding-top: 80px;
+    p, h4{
+      margin: 0;
+    }
+  }
+
+  .tracking-systems{
+    h2{
+      margin-top: 0;
+    }
+    .feature-box{
+      margin-bottom: 30px;
+    }
+    img:not(.feature){
+      width: 50px;
+    }
+    &__applications{
+      margin-top: 60px;
+      margin-bottom: -60px;
+      &-wrapper{
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    }
+    .pills-container{
+      margin-top: 50px;
+      @include max-breakpoint($mdUpper){
+        margin-top: 30px;
+      }
+    }
+    .pill{
+      margin: 0 15px 15px 0;
+    }
+  }
+
+}

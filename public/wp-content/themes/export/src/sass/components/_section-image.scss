@@ -1,0 +1,6 @@
+.section-image{
+  @include max-breakpoint($mdUpper){
+    margin-bottom: 30px;
+    width: 100%;
+  }
+}

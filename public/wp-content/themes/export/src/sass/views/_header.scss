@@ -1,0 +1,211 @@
+@import "../libraries";
+@import "../base/vars";
+@import "../base/mixins";
+
+.web-title{
+  @include max-breakpoint($xsUpper){
+    display: none;
+  }
+}
+
+//TODO: Check out conflict
+.nav-header{
+  box-sizing: border-box;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  position: absolute;
+  width: 100%;
+  top: 17px;
+  .row{
+    margin: 0 !important;
+  }
+  h1{
+    font-size: 2.75rem;
+    margin: 0;
+    color: white;
+  }
+  img{
+    width: 110px;
+  }
+  &__logo{
+    a{
+      display: flex;
+      align-items: center;
+    }
+    h3{
+      @include rem("font-size", 20);
+      font-weight: 400;
+      color: white;
+      padding-left: 10px;
+    }
+  }
+  .navigation{
+    @include max-breakpoint($smUpper + 10){
+      display: none;
+    }
+    .wp-menu{
+      .current-menu-item:not(.menu-item-has-children){
+        font-weight: bold;
+      }
+      .menu-item{
+        position: relative;
+        &:hover > .sub-menu {
+          display: block !important;
+        }
+      }
+      ul{
+        list-style-type: none;
+        padding: 0;
+        li{
+          display: inline-block;
+          vertical-align: middle;
+          padding-left: 20px;
+          padding-bottom: 0;
+          a{
+            color: white;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .sub-menu{
+        position: absolute;
+        right: 0;
+        width: 280px;
+        padding-top: 15px;
+        border-radius: 5px;
+        display: none !important;
+        &:hover{
+          display: block !important;
+        }
+        &::before {
+          content: "";
+          border-bottom: 10px solid #f8f8f8;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          position: absolute;
+          top: 5px;
+          right: 24px;
+          z-index: 2;
+          width: 0;
+          height: 0;
+        }
+        li{
+          display: block !important;
+          text-align: right;
+          background-color: #f8f8f8;
+          transition: all 0.3s ease;
+          padding-left: 0;
+          a{
+            color: black;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 18px 20px;
+          }
+          &:nth-child(1){
+            border-radius: 3px 3px 0 0;
+          }
+          &:last-child{
+            border-radius: 0 0 3px 3px;
+          }
+          &:hover{
+            transform: scale(1.05);
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(black, .2);
+          }
+        }
+      }
+    }
+  }
+  .mobile-menu{
+    @include max-breakpoint($smUpper + 10){
+      display: flex;
+    }
+    @include min-breakpoint($smUpper + 10){
+      display: none;
+    }
+  }
+}
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //animation: menuGrow 0.3s ease-in-out;
+  z-index: 100;
+
+  &-left, &-right{
+    height: 100%;
+    position: absolute;
+  }
+
+  &-left{
+    width: 60%;
+    background-color: $brandBluePrimary;
+    padding: 32px;
+    left: -100%;
+    top: 0;
+    @include max-breakpoint($smUpper){
+      width: 100%;
+    }
+    &-content{
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    ul{
+      padding: 0;
+      list-style-type: none;
+      li{
+        padding: 40px 0;
+        font-size: 40px;
+        color: white;
+        transform-origin: 0 50%;
+        transform: scale(1);
+        transition: all 0.3s ease;
+        text-align: center;
+        @include max-breakpoint($smUpper){
+          padding: 20px 0;
+        }
+        &:hover{
+          transform: scale(1.2);
+        }
+        a{
+          font-weight: bold;
+          text-transform: uppercase;
+          color: white;
+          font-size: 60px;
+        }
+      }
+    }
+
+  }
+
+  &__close{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__content{
+    text-align: center;
+    h2{
+      color: white;
+      transition: letter-spacing 0.3s ease;
+      cursor: pointer;
+      &:hover{
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+.menu.row{
+  margin-right: 0;
+  margin-left: 0;
+}

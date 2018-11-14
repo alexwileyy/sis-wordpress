@@ -1,0 +1,17 @@
+.statistics{
+  &--heading{
+    margin-bottom: 30px;
+  }
+  &--stat{
+    color: $brandBluePrimary;
+    margin-bottom: 0;
+    font-size: 3.125rem;
+  }
+  &--center{
+    text-align: center;
+  }
+  p{
+    margin: 0;
+    padding-top: 5px;
+  }
+}

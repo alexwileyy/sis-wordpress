@@ -1,0 +1,44 @@
+.icon{
+  padding: 20px;
+  background-color: white;
+  box-shadow: 1px 3px 12px rgba(0,0,0,.06);
+  border-radius: 50%;
+  img{
+    width: 22px;
+    height: 22px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.tabbed-section{
+  margin-bottom: -45px;
+  .pill{
+    margin-bottom: 45px;
+  }
+}
+
+li{
+  padding-bottom: 15px;
+}
+
+.inline-note{
+  border-left: 7px solid $brandBluePrimary;
+  padding-left: 20px;
+  @include max-breakpoint($xsUpper){
+    margin-bottom: 20px;
+  }
+}
+
+.menu-open{
+  overflow: hidden;
+}
+
+.hide-medium{
+  @include max-breakpoint($mdUpper){
+    display: none !important;
+  }
+}

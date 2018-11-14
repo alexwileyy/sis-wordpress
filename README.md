@@ -24,6 +24,12 @@ User: admin
 
 Pass: mOV1W8!aXM&zYIuZ&EQBn#dc
 
+#### GoDaddy Login
+
+User: alexwiley
+
+Pass: wG!t4Lyfe
+
 
 ### Preview
 

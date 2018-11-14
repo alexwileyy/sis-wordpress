@@ -1,0 +1,36 @@
+.post-preview{
+  display: flex;
+  align-items: flex-start;
+  border-top: 1px solid #DEDEDE;
+  &__left{
+    width: 400px;
+    height: 100%;
+    flex: 0 0 400px;
+  }
+
+  &__right{
+    padding: 30px 30px 10px 30px;
+    h3{
+      margin: 0;
+      @include rem("font-size", 37);
+      color: #2F2F2F;
+    }
+    p{
+      color: #2F2F2F;
+    }
+    &-meta{
+      p{
+        color: #C9C6C6;
+      }
+    }
+  }
+
+  &--thumbnail{
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    height: 230px;
+    width: 100%;
+    background-color: grey;
+  }
+
+}
