@@ -2,6 +2,8 @@
 @import "../base/vars";
 @import "../base/mixins";
 
+$MobileMenuActive: 955;
+
 .web-title{
   @include max-breakpoint($xsUpper){
     display: none;
@@ -42,7 +44,7 @@
     }
   }
   .navigation{
-    @include max-breakpoint($smUpper + 10){
+    @include max-breakpoint($MobileMenuActive){
       display: none;
     }
     .wp-menu{
@@ -120,10 +122,10 @@
     }
   }
   .mobile-menu{
-    @include max-breakpoint($smUpper + 10){
+    @include max-breakpoint($MobileMenuActive){
       display: flex;
     }
-    @include min-breakpoint($smUpper + 10){
+    @include min-breakpoint($MobileMenuActive){
       display: none;
     }
   }
@@ -136,6 +138,7 @@
   height: 100%;
   //animation: menuGrow 0.3s ease-in-out;
   z-index: 100;
+  visibility: hidden;
 
   &-left, &-right{
     height: 100%;
@@ -148,7 +151,8 @@
     padding: 32px;
     left: -100%;
     top: 0;
-    @include max-breakpoint($smUpper){
+    transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    @include max-breakpoint($MobileMenuActive){
       width: 100%;
     }
     &-content{
@@ -163,12 +167,15 @@
         padding: 40px 0;
         font-size: 40px;
         color: white;
-        transform-origin: 0 50%;
         transform: scale(1);
         transition: all 0.3s ease;
         text-align: center;
-        @include max-breakpoint($smUpper){
+        transform-origin: 50% 50%;
+        @include max-breakpoint($MobileMenuActive){
           padding: 20px 0;
+        }
+        @include max-breakpoint-height(564){
+          padding: 6px 0;
         }
         &:hover{
           transform: scale(1.2);
@@ -177,7 +184,10 @@
           font-weight: bold;
           text-transform: uppercase;
           color: white;
-          font-size: 60px;
+          font-size: 40px;
+          @include max-breakpoint-height(564){
+            font-size: 30px;
+          }
         }
       }
     }

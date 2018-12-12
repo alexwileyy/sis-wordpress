@@ -956,14 +956,14 @@ function wp_admin_bar_header() { ?>
  * @since 3.1.0
  */
 function _admin_bar_bump_cb() { ?>
-<!--<style type="text/css" media="screen">-->
-<!--	html { margin-top: 32px !important; }-->
-<!--	* html body { margin-top: 32px !important; }-->
-<!--	@media screen and ( max-width: 782px ) {-->
-<!--		html { margin-top: 46px !important; }-->
-<!--		* html body { margin-top: 46px !important; }-->
-<!--	}-->
-<!--</style>-->
+<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
 <?php
 }
 
@@ -985,8 +985,12 @@ function show_admin_bar( $show ) {
 }
 
 /**
- * Determine whether the admin bar should be showing.
- *
+ * Determines whether the admin bar should be showing.
+ * 
+ * For more information on this and similar theme functions, check out
+ * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
+ * Conditional Tags} article in the Theme Developer Handbook.
+ * 
  * @since 3.1.0
  *
  * @global bool   $show_admin_bar

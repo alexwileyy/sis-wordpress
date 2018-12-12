@@ -22,6 +22,7 @@ $post = get_field('short_description', get_option('page_for_posts'));
 
 
         <!-- Featured posts -->
+        <?php if($featured['show_featured']) : ?>
         <?php
         $post_objects = get_field('featured', get_option('page_for_posts'))['featured_posts'];
 
@@ -35,7 +36,9 @@ $post = get_field('short_description', get_option('page_for_posts'));
                     </div>
                     <div class="row">
                         <?php foreach( $post_objects as $post_object): ?>
+                            <?php if($post_object["post"]) : ?>
                             <?php
+//                            var_dump($post_object["post"]);
                             $post_object = $post_object["post"];
                             $desc = get_field('short_description', $post_object->ID);
                             $link = get_permalink($post_object->ID);
@@ -65,14 +68,16 @@ $post = get_field('short_description', get_option('page_for_posts'));
                                     </div>
                                 </a>
                             </div>
-
+                            <?php endif;?>
                         <?php endforeach; ?>
+
                     </div>
                 </div>
 
             </section>
         <?php endif;?>
         <!-- End featured posts -->
+        <?php endif; ?>
 
         <?php $sections = array('news' => 3, 'blog' => 4); ?>
 
@@ -85,7 +90,7 @@ $post = get_field('short_description', get_option('page_for_posts'));
             'post_type'              => array( 'post' ),
             'nopaging'               => false,
             'posts_per_page'         => '3',
-            'order'                  => 'ASC',
+            'order'                  => 'DEC',
             'orderby'                => 'date',
             'category'               => $section
         );
@@ -103,6 +108,7 @@ $post = get_field('short_description', get_option('page_for_posts'));
                         <h2 class="n-and-b--title"><?php echo $name;?></h2>
                     </div>
                     <div class="col-12">
+                        <?php if(sizeof($posts) > 0) : ;?>
                         <?php foreach ($posts as $the_post) : ?>
                         <div class="post-preview">
                             <div class="post-preview__left">
@@ -120,7 +126,7 @@ $post = get_field('short_description', get_option('page_for_posts'));
                                     $source = get_field('source', $the_post->ID)['name'];
                                     ?>
                                     <?php if(get_field('source', $the_post->ID)) : ?>
-                                        <p>By <?php echo get_the_author_meta( 'display_name', $the_post->post_author );?>   |   Source: <a target="_blank" href="<?php echo get_field('source', $the_post->ID)['source_url'];?>"><?php echo get_field('source', $the_post->ID)['name'];?></a></p>
+                                        <p>By <?php echo get_the_author_meta( 'display_name', $the_post->post_author );?>   |   Source: <a target="_blank" href="<?php echo get_field('source', $the_post->ID)['source_url'];?>"><?php echo get_field('source', $the_post->ID)['name'];?></a>   |   On: <?php echo the_date(the_post());?></p>
                                     <? else: ?>
                                         <p>By <?php echo get_the_author_meta( 'display_name', $the_post->post_author );?></p>
                                     <?php endif; ?>
@@ -128,6 +134,9 @@ $post = get_field('short_description', get_option('page_for_posts'));
                             </div>
                         </div>
                         <?php endforeach; ?>
+                        <?php else: ?>
+                        <p>No posts, check back soon for more!</p>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

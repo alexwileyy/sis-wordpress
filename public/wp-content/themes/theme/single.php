@@ -1,13 +1,20 @@
-<?php get_header(); ?>
+<?php get_header();
+setup_postdata(the_post())
+
+//$post = get_post();
+?>
 
 <main class="post">
 
     <!-- Header -->
     <header class="header--small" style="background-image: url('<?php echo get_template_directory_uri();?>/images/shape-background.jpg')">
         <!-- Header content -->
-        <div class="container-fluid">
-            <div class="row">
-                <h2 class="col-10"><?php the_title();?></h2>
+        <div class="container">
+            <div class="row post__title">
+                <div class="col-10">
+                    <h2><?php the_title();?></h2>
+                    <p>By <?php echo get_the_author_meta('first_name') . ' ' . get_the_author_meta('last_name');?> <span>|</span> On <?php echo the_date();?></p>
+                </div>
             </div>
         </div>
     </header>
@@ -26,7 +33,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <?php the_content();?>
+                <?php echo get_post()->post_content;?>
             </div>
         </div>
     </div>

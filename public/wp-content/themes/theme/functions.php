@@ -51,7 +51,8 @@ add_action('wp_head', 'hook_sig', 0);
  {
      register_nav_menus(
          array(
-             'nav-top' => __('Top Navigation')
+             'nav-top' => __('Top Navigation'),
+             'short-menu' => __('Mobile & Footer Menu')
          )
      );
  }
@@ -89,16 +90,16 @@ function remove_menus()
     //remove_menu_page( 'upload.php' );                 //Media
     // remove_menu_page( 'edit.php?post_type=page' );    //Pages
     remove_menu_page('edit-comments.php');          //Comments
-    remove_menu_page( 'themes.php' );                 //Appearance
-    remove_menu_page( 'plugins.php' );                //Plugins
+    //remove_menu_page( 'themes.php' );                 //Appearance
+    //remove_menu_page( 'plugins.php' );                //Plugins
     // remove_menu_page( 'users.php' );                  //Users
     remove_menu_page( 'tools.php' );                  //Tools
-    // remove_menu_page( 'options-general.php' );        //Settings
+    remove_menu_page( 'options-general.php' );        //Settings
 }
 add_action('admin_menu', 'remove_menus');
 
 function remove_acf_menu() {
-    remove_menu_page('edit.php?post_type=acf-field-group');
+    //remove_menu_page('edit.php?post_type=acf-field-group');
 }
 add_action( 'admin_menu', 'remove_acf_menu', 999);
 
@@ -158,7 +159,7 @@ function service_post_type() {
         'description'           => __( 'Services offered by SIS', 'sis' ),
         'labels'                => $labels,
         'supports'              => array( 'title', 'page-attributes'),
-        'hierarchical'          => true,
+        'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
         'show_in_menu'          => true,
@@ -176,3 +177,14 @@ function service_post_type() {
 
 }
 add_action( 'init', 'service_post_type', 0 );
+
+function blog_launcher(){
+    add_submenu_page( 'edit.php', 'News Post', 'New News Post', 'read', 'add-news', 'wps_news_func');
+}
+add_action('admin_menu', 'blog_launcher');
+
+function wps_news_func(){
+    wp_redirect('/wp-admin/post-new.php');
+//    echo '<div class="wrap"><div id="icon-options-general" class="icon32"><br></div>
+//        <h2>New News</h2></div>';
+}

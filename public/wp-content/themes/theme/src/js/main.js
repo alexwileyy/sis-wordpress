@@ -1,3 +1,8 @@
+const global = {
+    showMenu: false,
+    menuState: 'closed'
+};
+
 jQuery(document).ready(function(){
 
     // Select all links with hashes
@@ -32,11 +37,13 @@ jQuery(document).ready(function(){
             }
         });
 
+    $('#menu-mobile-footer .menu-item').click(toggleMenu);
+
     $('.header-slider__wrapper').slick({
         autoplay: true,
         arrows: false,
         adaptiveHeight: true,
-        autoplaySpeed: 10000
+        autoplaySpeed: 5000
     });
 
     $('.remove-script').remove();
@@ -87,3 +94,14 @@ function contact() {
         $('.contact__form').remove();
     }
 }
+
+const toggleMenu = () => {
+    const body = document.getElementsByTagName('body');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuContainer = mobileMenu.querySelectorAll('.menu-left')[0];
+    global.showMenu = !global.showMenu;
+    global.menuState = global.menuState === 'closed' ? 'open' : 'closed';
+    menuContainer.style.left = global.showMenu ? '0' : '-100%';
+    mobileMenu.style.visibility = global.showMenu ? 'visible' : 'hidden';
+    body[0].classList.toggle('menu-open');
+};

@@ -33,7 +33,7 @@
                         </a>
                     </div>
                     <div class="nav-header__right">
-                        <div class="mobile-menu" (click)="toggleMenu()">
+                        <div class="mobile-menu" onclick="toggleMenu()">
                             <div class="mobile-menu__node"></div>
                             <div class="mobile-menu__node"></div>
                             <div class="mobile-menu__node"></div>
@@ -41,18 +41,12 @@
                         <div class="navigation">
                             <?php
                                 $args = array(
-                                        'menu' => 'nav-top',
+                                    'theme_location' => 'nav-top',
                                         'menu_class' => '',
                                         'container_class' => 'wp-menu'
                                 );
                                 wp_nav_menu($args);
                             ?>
-<!--                            <ul>-->
-<!--                                <li><a routerLink="/">Home</a></li>-->
-<!--                                <li><a routerLink="/about">About</a></li>-->
-<!--                                <li><a href="#services">Services</a></li>-->
-<!--                                <li><a routerLink="/contact">Contact</a></li>-->
-<!--                            </ul>-->
                         </div>
                     </div>
                 </div>
@@ -60,18 +54,21 @@
 
         </header>
 
-<!--        <div class="menu" [style.visibility]="showMenu ? 'visible' : 'hidden'">-->
-<!---->
-<!--            <div class="menu-left" [@menuLeft]="menuState">-->
-<!--                <div class="menu-left-content">-->
-<!--                    <ul>-->
-<!--                        <li *ngFor="let item of menuItems">-->
-<!--                            <a [routerLink]="item.link" [fragment]="item.frag" (click)="toggleMenu()">{{item.text}}</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!---->
-<!--        </div>-->
+        <div id="mobile-menu" class="menu">
+
+            <div class="menu-left">
+                <div class="menu-left-content">
+                    <?php
+                    $args = array(
+                        'theme_location' => 'short-menu',
+                        'menu_class' => '',
+                        'container_class' => 'wp-menu'
+                    );
+                    wp_nav_menu($args);
+                    ?>
+                </div>
+            </div>
+
+        </div>
 
         <main class="main">

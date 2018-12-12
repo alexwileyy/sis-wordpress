@@ -13,6 +13,9 @@
  * @since Theme 2018
  */
 
+$section_two = get_field('section_two');
+$section_three = get_field('section_three');
+
 get_header(); ?>
 
     <!-- Main container for landing page -->
@@ -52,12 +55,17 @@ get_header(); ?>
         <?php if($video['show_video']) : ?>
         <section class="landing__video">
             <div class="landing__video--container">
-                <video width="320" height="240" poster="<?php echo $video['poster'];?>" controls>
+                <video id="vid" width="320" height="240" poster="<?php echo $video['poster'];?>" controls muted>
                     <source src="<?php echo $video['video'];?>" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
         </section>
+        <?php if($video['autoplay']) : ?>
+        <script>
+            document.getElementById('vid').play();
+        </script>
+        <?php endif; ?>
         <?php endif;?>
 
         <section class="container section landing__intro service-section">
@@ -97,9 +105,13 @@ get_header(); ?>
 
             <div class="row landing__about-content">
                 <div class="col-md-5 offset-md-7">
-                    <h2>WE OPERATE ON A GLOBAL SCALE</h2>
-                    <p>Security and Intelligence Services (SIS) is a new and dynamic international security partnership with headquarters in the United Kingdom with offices in Europe, USA, South America and the Middle East.</p>
-                    <a routerLink="/contact"><app-button text="enquire"></app-button></a>
+                    <h2 class="heading--small"><?php echo $section_two['title']; ?></h2>
+                    <p><?php echo $section_two['body']; ?></p>
+                    <?php if($section_two['button']['enable_button']) : ?>
+                        <a href="<?php echo $section_two['button']['link']; ?>" class="landing__intro-button">
+                            <button class="button"><p><?php echo $section_two['button']['button_text']; ?></p></button>
+                        </a>
+                    <?php endif;?>
                 </div>
             </div>
 
@@ -122,7 +134,7 @@ get_header(); ?>
 
         // The Query
         $services = new WP_Query( $args );
-        $services->posts = array_reverse($services->posts);
+//        $services->posts = $services->posts;
         ?>
         <!-- Services -->
         <section class="section service-section--small landing__services" id="services">
@@ -134,9 +146,8 @@ get_header(); ?>
                     <div class="col-12">
                         <!-- Section heading + text -->
                         <div class="landing__services-heading">
-                            <h2 class="heading--small">WHATEVER YOUR NEEDS, WE’VE GOT IT COVERED</h2>
-                            <p class="body--small">With a first-class record of service to clients throughout the world including blue chip companies, hi-net worth clients, governments, law enforcement and the military SIS can provide all of your security requirements.</p>
-                            <p class="body--small">Our Senior Management team together with our long-term partners bring professionalism, confidentiality and a ‘can do’ attitude to all our projects/SIS-The people to trust.</p>
+                            <h2 class="heading--small"><?php echo $section_three['title']; ?></h2>
+                            <p class="body--small"><?php echo $section_three['body']; ?></p>
                         </div>
                         <!-- End section heading + text -->
                     </div>
@@ -153,7 +164,7 @@ get_header(); ?>
                             $feature_image = $service['feature_image'];
                             $desc = $service['short_description'];
                             ?>
-                            <div class="services__box col-md-4 col-sm-6 col-10 offset-1 offset-sm-0">
+                            <div class="services__box col-md-4 col-sm-6 col-10 offset-0 offset-sm-0">
 
                                 <a href="<?php echo get_post_permalink();?>">
                                     <div class="services__box-wrapper">

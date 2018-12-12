@@ -21,6 +21,14 @@
         font-weight: 400;
       }
     }
+    .wp-menu{
+      padding: 0;
+      list-style-type: none;
+      li{
+        display: inline-block;
+        margin: 0 15px;
+      }
+    }
   }
   &__contact{
     justify-content: center;

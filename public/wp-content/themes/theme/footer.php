@@ -9,11 +9,14 @@
             </div>
             <!-- navigation -->
             <div class="row footer__nav">
-                <!-- Nav links -->
-                <div><p><a routerLink="">Home</a></p></div>
-                <div><p><a routerLink="/" fragment="services">Services</a></p></div>
-                <div><p><a routerLink="/about">About Us</a></p></div>
-                <div><p><a routerLink="/contact">Contact</a></p></div>
+                <?php
+                $args = array(
+                    'menu' => 'short-menu',
+                    'menu_class' => '',
+                    'container_class' => 'wp-menu'
+                );
+                wp_nav_menu($args);
+                ?>
             </div>
 
             <div class="row footer__rel">

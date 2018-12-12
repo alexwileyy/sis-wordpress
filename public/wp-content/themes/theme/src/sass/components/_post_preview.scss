@@ -2,10 +2,19 @@
   display: flex;
   align-items: flex-start;
   border-top: 1px solid #DEDEDE;
+  @include max-breakpoint(760){
+    flex-wrap: wrap;
+  }
   &__left{
     width: 400px;
     height: 100%;
     flex: 0 0 400px;
+    @include max-breakpoint(960){
+      flex: 0 0 200px;
+    }
+    @include max-breakpoint(760){
+      flex: 0 0 100%;
+    }
   }
 
   &__right{
@@ -22,6 +31,10 @@
       p{
         color: #C9C6C6;
       }
+    }
+    @include max-breakpoint(760){
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
